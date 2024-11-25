@@ -1,20 +1,21 @@
-const rock = document.querySelector('#rock')
+const rock = document.getElementById('rock')
 const paper = document.querySelector('#paper')
 const scissors = document.querySelector('#scissors')
+// const container = document.querySelector('.container')
 
 function getComputerChoice(){
     const choices = ["rock","paper","scissors"]
     const choice = choices[Math.floor(Math.random()*choices.length)]
     return choice
 }
-function getHumanChoice() {
-    const budInput = prompt("shoot bud: ").toLowerCase()
-    if (budInput === 'rock' || 'paper' || 'scissors') {
-        return budInput
-    } else if (budInput != 'rock' || 'paper' || 'scissors'){
-        alert('revisit your entry!')
-    }
-}
+// function getHumanChoice() {
+//     const budInput = prompt("shoot bud: ").toLowerCase()
+//     if (budInput === 'rock' || 'paper' || 'scissors') {
+//         return budInput
+//     } else if (budInput != 'rock' || 'paper' || 'scissors'){
+//         alert('revisit your entry!')
+//     }
+// }
 
 let humanScore = 0;
 let computerScore = 0;
@@ -42,6 +43,26 @@ function playRound(humanChoice,computerChoice) {
         console.log("a draw!");
     }
 }
+
+rock.addEventListener('click', ()=>{
+    let computerChoice = getComputerChoice()
+    let humanChoice = 'rock'
+    playRound(humanChoice, computerChoice)
+})
+
+
+paper.addEventListener('click', ()=>{
+    let computerChoice = getComputerChoice()
+    let humanChoice = 'paper'
+    playRound(humanChoice, computerChoice)
+})
+
+scissors.addEventListener('click', ()=>{
+    let computerChoice = getComputerChoice()
+    let humanChoice = 'scissors'
+    playRound(humanChoice, computerChoice)
+})
+
 
 // for (let count = 0; count < 5; count++) {
 //     playRound(getHumanChoice(), getComputerChoice());
