@@ -1,3 +1,7 @@
+const rock = document.querySelector('#rock')
+const paper = document.querySelector('#paper')
+const scissors = document.querySelector('#scissors')
+
 function getComputerChoice(){
     const choices = ["rock","paper","scissors"]
     const choice = choices[Math.floor(Math.random()*choices.length)]
@@ -39,10 +43,10 @@ function playRound(humanChoice,computerChoice) {
     }
 }
 
-for (let count = 0; count < 5; count++) {
-    playRound(getHumanChoice(), getComputerChoice());
+// for (let count = 0; count < 5; count++) {
+//     playRound(getHumanChoice(), getComputerChoice());
     
-    if (count == 4){
-        console.log(`Final Score is Human ${humanScore}:Computer ${computerScore}`);
-    }
-}
+//     if (count == 4){
+//         console.log(`Final Score is Human ${humanScore}:Computer ${computerScore}`);
+//     }
+// }
